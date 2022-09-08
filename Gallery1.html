@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        #div {
+            margin: 30px;
+            float: left;
+            width: 240px;
+            height: 100%;
+            
+        }
+
+            #div:hover {
+                filter: sepia(0.3);
+            }
+
+
+        #img {
+            border: 20px solid #ccc;
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+    <script>
+        let g;
+
+        function photoArray() {
+            g = document.getElementById("g");
+
+
+            let run = 20;
+
+
+            for (let i = 1; i < run; i++) {
+
+                let div = document.createElement("div"); console.log(div);
+                div.className = "gallery";
+                div.id = "div";
+                let a = document.createElement("a");
+                a.target = "_blank";
+                a.href = "gallery/" + [i] + ".jpg"; console.log(a.href);
+                a.id = "a";
+                let img = document.createElement("img");
+                img.src = "gallery/" + [i] + ".jpg";
+                img.alt = "Missing Photo";
+                img.id = "img";
+                img.setAttribute("uniqeId", "img" + [i]);
+
+                g.appendChild(div);
+                div.appendChild(a);
+                a.appendChild(img);
+
+
+            }
+
+
+        }
+
+
+
+    </script>
+</head>
+<body id="body" onload="photoArray()">
+
+    <center>
+        <div id="g">
+
+        </div>
+    </center>
+
+    <!--
+    <div class="gallery">
+        <a target="_blank" href="gallery/1.jpg">
+            <img src="gallery/1.jpg" alt="missing photo" />
+        </a>
+
+    </div>
+
+    <div class="gallery">
+        <a target="_blank" href="gallery/2.jpg">
+            <img src="gallery/2.jpg" alt="missing photo" />
+        </a>
+    </div>
+
+    <div class="gallery">
+        <a target="_blank" href="gallery/3.jpg">
+            <img src="gallery/3.jpg" alt="missing photo" />
+        </a>
+    </div>
+
+    <div class="gallery">
+        <a target="_blank" href="gallery/4.jpg">
+            <img src="gallery/4.jpg" alt="missing photo" />
+        </a>
+    </div>
+
+    <div class="gallery">
+        <a target="_blank" href="gallery/5.jpg">
+            <img src="gallery/5.jpg" alt="missing photo" />
+        </a>
+    </div>
+
+    <div class="gallery">
+        <a target="_blank" href="gallery/6.jpg">
+            <img src="gallery/6.jpg" alt="missing photo" />
+        </a>
+    </div>
+    <div class="gallery">
+        <a target="_blank" href="gallery/7.jpg">
+            <img src="gallery/7.jpg" alt="missing photo" />
+        </a>
+
+    </div>
+
+    <div class="gallery">
+        <a target="_blank" href="gallery/8.jpg">
+            <img src="gallery/8.jpg" alt="missing photo" />
+        </a>
+    </div>
+
+    <div class="gallery">
+        <a target="_blank" href="gallery/9.jpg">
+            <img src="gallery/9.jpg" alt="missing photo" />
+        </a>
+    </div>
+
+    <div class="gallery">
+        <a target="_blank" href="gallery/10.jpg">
+            <img src="gallery/10.jpg" alt="missing photo" />
+        </a>
+    </div>
+
+    <div class="gallery">
+        <a target="_blank" href="gallery/11.jpg">
+            <img src="gallery/11.jpg" alt="missing photo" />
+        </a>
+    </div>
+
+    <div class="gallery">
+        <a target="_blank" href="gallery/12.jpg">
+            <img src="gallery/12.jpg" alt="missing photo" />
+        </a>
+    </div>
+        -->
+
+</body>
+</html>

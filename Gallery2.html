@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title> שש וארגמן שמלות כלה - גלריה </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="images2/logoicon.ico">
+
+    <link rel="stylesheet" href="external_css/amatic+sc.css">
+    <link rel="stylesheet" href="external_css/fontAwsome5.11.2.css">
+
+    <style>
+        /* Reset CSS */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html,
+        body {
+            background: linear-gradient(45deg, #ccff99, pink);
+            padding: 15px;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            vertical-align: middle;
+            display: inline-block;
+        }
+
+        img:hover {
+            filter: sepia(0.3);
+        }
+
+        #backToSite {
+            position: relative;
+            width: 10%;
+            left: 45%;
+            text-align: center;
+            padding-bottom: 25px;
+        }
+        #backToSite :hover{
+            color:lightgoldenrodyellow;
+        }
+
+        #title {
+            position: relative;
+            width: 33.3%;
+            left: 33.3%;
+            text-align: center;
+            padding-bottom: 25px;
+            font-size: 70px;
+            font-weight: bolder;
+            color: darkgoldenrod;
+        }
+
+            #backToSite a {
+                text-decoration: none;
+                font-size: 20px;
+                font-family: sans-serif;
+                font-weight: bold;
+                color: darkcyan;
+            }
+        /* Main CSS */
+        .grid-wrapper > a {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .grid-wrapper > div > a > img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 5px;
+        }
+
+        .grid-wrapper {
+            display: grid;
+            grid-gap: 10px;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-auto-rows: 200px;
+            grid-auto-flow: dense;
+        }
+
+            .grid-wrapper .wide {
+                grid-column: span 2;
+            }
+
+            .grid-wrapper .tall {
+                grid-row: span 2;
+            }
+
+            .grid-wrapper .big {
+                grid-column: span 2;
+                grid-row: span 2;
+            }
+
+
+
+
+
+        .font1 {
+            font-family: 'Amatic SC', cursive;
+        }
+    </style>
+    <script>
+
+        let gallery;
+
+        function photoArray() {
+            gallery = document.getElementById("gallery");
+
+            let run = 20;
+
+
+
+
+            console.log(RandomInt(1, 4));
+            for (let i = 1; i <= run; i++) {
+
+                let cs = RandomInt(1, 4) == 1 ? "tall" : RandomInt(1, 4) == 2 ? "wide" : RandomInt(1, 4) == 3 ? "big" : "";
+
+                // if (RandomInt(1, 4) == 1)
+                //     cs = "tall";
+                // else if (RandomInt(1, 4) == 2)
+                //     cs = "wide";
+                // else if (RandomInt(1, 4) == 3)
+                //     cs = "big";
+                // else cs = "";
+
+                let div = document.createElement("div");
+                div.className = cs;
+                let img = document.createElement("img");
+                img.src = "gallery/" + [i] + ".jpg";
+                img.alt = " ";
+                let a = document.createElement("a");
+                a.href = "gallery/" + [i] + ".jpg";
+                a.target = "_blank";
+
+
+                //css>div>img
+                //gallery.appendChild(div);
+                //div.appendChild(img);
+
+                //css>a>div>img
+                gallery.appendChild(div);
+                div.appendChild(a);
+                a.appendChild(img);
+            }
+        }
+        function RandomInt(min, max) {
+            return (parseInt(Math.random() * (max - min + 1)) + min);
+        }
+
+
+    </script>
+</head>
+<body id="body"  onload="photoArray()">
+    <div id="title" class="font1">הכלות שלנו</div>
+    <div id="backToSite">
+        <a href="index.html">חזרה לאתר הראשי</a>
+    </div>
+
+    
+    <div id="gallery" class="grid-wrapper"></div>
+
+
+
+
+
+
+</body>
+</html>
